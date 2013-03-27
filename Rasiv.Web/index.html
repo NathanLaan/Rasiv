@@ -65,15 +65,31 @@
     </ul>
   </div>
 
-      <script type="text/x-handlebars" data-template-name="index">
+  <div>
+</div>
+
+<script type="text/x-handlebars">
+
       <div class="row">
       <div class="span8">
+  {{outlet}}
+      </div>
+      </div>
+      </script>
+      
+      
+      <script type="text/x-handlebars" data-template-name="index">
       <h1>{{appHeader}}</h1>
       <h3>
         {{appBody}}
       </h3>
-      </div>
-      </div>
+      </script>
+      
+      <script type="text/x-handlebars" data-template-name="about">
+      <h1>About</h1>
+      <h3>
+        {{appBody}}
+      </h3>
       </script>
 
 <hr>

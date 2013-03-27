@@ -1,5 +1,12 @@
-﻿var HelloEmber = Ember.Application.create();
-HelloEmber.IndexController = Ember.Controller.extend({
+﻿var RasivApp = Ember.Application.create();
+
+
+RasivApp.IndexController = Ember.Controller.extend({
     appHeader: "HeaderText",
     appBody: "BodyText"
+});
+
+
+RasivApp.Router.map(function () {
+    this.route('about');
 });
