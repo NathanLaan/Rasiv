@@ -14,30 +14,13 @@
     <![endif]-->
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../default/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/bootswatch.css" rel="stylesheet">
-
-   <script type="text/javascript">
-
-       var _gaq = _gaq || [];
-       _gaq.push(['_setAccount', 'UA-23019901-1']);
-       _gaq.push(['_setDomainName', "bootswatch.com"]);
-       _gaq.push(['_setAllowLinker', true]);
-       _gaq.push(['_trackPageview']);
-
-       (function () {
-           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-       })();
-
-   </script>
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/bootswatch.css" rel="stylesheet">
 
   </head>
 
   <body class="preview" id="top" data-spy="scroll" data-target=".subnav" data-offset="80">
-
 
 
   <!-- Navbar
@@ -76,29 +59,22 @@
 
 <div class="container">
 
-<header class="jumbotron subhead" id="overview">
-  <div class="row">
-
-    <div class="span6">
-      <div class="bsa well">
-          <div id="bsap_1277971" class="bsarocks bsap_c466df00a3cd5ee8568b5c4983b6bb19"></div>
-      </div>
-    </div>
-  </div>
   <div class="subnav">
     <ul class="nav nav-pills">
       <li><a href="#Submenu">Submenu</a></li>
     </ul>
   </div>
-</header>
 
-
-
-      <script type="text/x-handlebars" data-template-name="application">
-
+      <script type="text/x-handlebars" data-template-name="index">
+      <div class="row">
+      <div class="span8">
+      <h1>{{appHeader}}</h1>
+      <h3>
+        {{appBody}}
+      </h3>
+      </div>
+      </div>
       </script>
-
-
 
 <hr>
 <footer id="footer">
@@ -107,7 +83,6 @@
 </footer>
 
 </div><!-- /container -->
-
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
