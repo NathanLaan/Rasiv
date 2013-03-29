@@ -1,15 +1,14 @@
 ﻿$(function () {
 
+    var addFeedTemplate_name = 'addFeedTemplate.html';
 
     //
     // load templates
     //
-    underloader.loadTemplates('/jstemps/', ['addFeedTemplate.html'], function () {
+    underloader.loadTemplates('/jstemps/', [addFeedTemplate_name], function () {
         //app = new AppRouter();
         //Backbone.history.start();
     });
-
-    underloader.get('addFeedTemplate.html');
 
     RasivFeedModel = Backbone.Model.extend({
         initialize: function () {
@@ -26,10 +25,22 @@
             this.renderView();
         },
         renderView: function () {
+
+            var templateContent = underloader.get(addFeedTemplate_name);
+
+            console.log('--addFeedView.renderView()--');
+            console.log(underloader);
+            console.log(addFeedTemplate_name);
+            console.log(templateContent);
+
             //Pass variables in using Underscore.js Template
             var variables = { addFeedLabel: "Add Feed" };
             // Compile the template using underscore
+            /*
             var template = _.template($("#addFeedTemplate").html(), variables);
+            /*/
+            var template = _.template(underloader.get(addFeedTemplate_name), variables);
+            //*/
             // Load the compiled HTML into the Backbone "el"
             this.$el.html(template);
         },

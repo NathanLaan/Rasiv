@@ -19,6 +19,7 @@ underloader = {
             var name = fileNames[index];
             console.log('--underloader.loadTemplates()-- LOADING: ' + rootPath + name);
             $.get(rootPath + name, function (data) {
+                console.log('--underloader.loadTemplates()-- DATA: ' + data + ' --FOR: ' + name);
                 that.templates[name] = data;
                 index++;
                 if (index < fileNames.length) {
@@ -34,6 +35,7 @@ underloader = {
 
     // Get template by name from hash of preloaded templates
     get: function (name) {
+        console.log('--underloader.get()-- GET: ' + name);
         return this.templates[name];
     }
 
