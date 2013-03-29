@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rasiv.Web", "Rasiv.Web\Rasiv.Web.csproj", "{BCEA0450-99C1-4F87-8355-4F7D026E1583}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rasiv.Web", "Rasiv.Web\Rasiv.Web.csproj", "{750736CB-BBC6-4410-B761-4D8296F5CCEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BCEA0450-99C1-4F87-8355-4F7D026E1583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCEA0450-99C1-4F87-8355-4F7D026E1583}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCEA0450-99C1-4F87-8355-4F7D026E1583}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCEA0450-99C1-4F87-8355-4F7D026E1583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750736CB-BBC6-4410-B761-4D8296F5CCEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750736CB-BBC6-4410-B761-4D8296F5CCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750736CB-BBC6-4410-B761-4D8296F5CCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750736CB-BBC6-4410-B761-4D8296F5CCEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -33,6 +33,21 @@
         }
     });
 
+    ViewFeedView = Backbone.View.extend({
+        initialize: function () {
+            console.log('viewFeedView.initialize()');
+            this.renderView();
+        },
+        renderView: function () {
+            //Pass variables in using Underscore.js Template
+            var variables = { feedLabel: "--FEED--TITLE--" };
+            // Compile the template using underscore
+            var template = _.template($("#viewFeedTemplate").html(), variables);
+            // Load the compiled HTML into the Backbone "el"
+            this.$el.html(template);
+        }
+    });
+
     var rfm = new RasivFeedModel();
 
 
@@ -41,6 +56,7 @@
 
     var AppRouter = Backbone.Router.extend({
         routes: {
+            "feed/:id": "viewRoute",
             "add": "addRoute",
             "*actions": "defaultRoute" // matches http://rasiv.com/#anything-here
         }
@@ -52,11 +68,15 @@
         console.log('ACTIONS: ' + actions);
     });
 
-    RasivAppRouter.on('route:addRoute', function (id) {
-        console.log('route:addRoute--1');
-        var afv = new AddFeedView({ el: $("#pageContent") });
-        afv.initialize();
-        console.log('route:addRoute--2');
+    RasivAppRouter.on('route:viewRoute', function (id) {
+        console.log('--route:viewRoute--');
+        var v = new ViewFeedView({ el: $("#pageContent") });
+        v.initialize();
+    });
+
+    RasivAppRouter.on('route:addRoute', function () {
+        var v = new AddFeedView({ el: $("#pageContent") });
+        v.initialize();
     });
 
     // Start Backbone history a necessary step for bookmarkable URL's
