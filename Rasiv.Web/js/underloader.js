@@ -20,6 +20,8 @@ underloader = {
                 that.templates[name] = data;
             });
         });
+
+        callback();
     },
 
     // Get template by name from hash of preloaded templates
