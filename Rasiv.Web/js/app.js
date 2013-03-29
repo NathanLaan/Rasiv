@@ -27,20 +27,31 @@
                 //console.log('^^^^^ addFeedView.renderView()--');
                 //console.log(underloader);
                 //console.log(addFeedTemplate_name);
-                console.log("======= TEMPLATECONTENT: " + templateContent);
+                console.log("======= TEMPLATECONTENT1: " + templateContent);
 
                 //Pass variables in using Underscore.js Template
-                var variables = { addFeedLabel: "Add Feed" };
+                var variables = { addFeedLabel: "Add Feed TEST2.0" };
                 // Compile the template using underscore
                 /*
                 var template = _.template($("#addFeedTemplate").html(), variables);
                 /*/
-                var template = _.template(templateContent, variables);
+                //var template = _.template(templateContent, variables);
+
+                var t1 = $("#addFeedTemplate", templateContent);
+                var t2 = $("#addFeedTemplate", templateContent).html();
+                var t3 = $("#addFeedTemplate", templateContent).prevObject.html();
+                console.log("======= t1: " + t1);
+                console.log("======= t2: " + t2);
+                console.log("======= t3: " + t3);
+                console.log(t1);
+                var template = _.template(t3, variables);
+                console.log("======= TEMPLATECONTENT2: " + template);
                 //*/
                 // Load the compiled HTML into the Backbone "el"
                 this.$el.html(template);
 
-                $(this.el).html(template);
+                //$(this.el).html(this.template(this.model.toJSON()));
+                //$(this.el).html("TEST: " + template);
                 return this;
             },
             events: {
@@ -116,7 +127,7 @@
 
 
 
-    
+
 
 
 
