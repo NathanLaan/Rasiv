@@ -1,11 +1,12 @@
 ﻿$(function () {
 
-    var addFeedTemplate_name = 'addFeedTemplate.html';
+    var addFeedTemplate_name = 'AddFeedTemplate.html';
+    var viewFeedTemplate_name = 'ViewFeedTemplate.html';
 
     //
     // load templates
     //
-    underloader.loadTemplates('/jstemps/', [addFeedTemplate_name], function () {
+    underloader.loadTemplates('/jstemps/', [addFeedTemplate_name, viewFeedTemplate_name], function () {
         //app = new AppRouter();
         //Backbone.history.start();
         var AppRouter = Backbone.Router.extend({
