@@ -37,7 +37,7 @@
        <div class="nav-collapse collapse" id="main-menu">
         <ul class="nav" id="main-menu-left">
           <li><a href="/">Apps</a></li>
-          <li><a href="/">Add Feed</a></li>
+          <li><a href="/index.html/#/add">Add Feed</a></li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <b class="caret"></b></a>
             <ul class="dropdown-menu" id="swatch-menu">
@@ -58,50 +58,23 @@
  </div>
 
 <div class="container">
-
-  <div class="subnav">
+    <div class="subnav">
     <ul class="nav nav-pills">
-      <li><a href="#Submenu">Submenu</a></li>
+    <li><a href="#Submenu">Submenu</a></li>
     </ul>
-  </div>
+    </div>
 
-  <div>
-</div>
+    <div class="row">
+    <div class="span8">
 
-<!--
-<script type="text/x-handlebars">
-<div class="row">
-<div class="span8">
-{{outlet}}
-</div>
-</div>
-</script>-->
-      
-    <script type="text/x-handlebars" data-template-name="application">
-    --application--<br/>
-  {{outlet}}
-    </script>
+    <br/>--pageContentPRE--
+    <div id="pageContent"></div>
+    <br/>--pageContentPOST--
 
-<script type="text/x-handlebars" data-template-name="contributors">
-list:
-{{#each person in controller}}
-{{person.login}}
-{{/each}}
-</script>
+    </div>
+    </div>
+
       
-      <script type="text/x-handlebars" data-template-name="index">
-      <h1>H1--INDEX--{{appHeader}}</h1>
-      <h3>
-        {{appBody}}
-      </h3>
-      </script>
-      
-      <script type="text/x-handlebars" data-template-name="about">
-      <h1>About</h1>
-      <h3>
-        {{appBody}}
-      </h3>
-      </script>
 
 <hr>
 <footer id="footer">
@@ -111,11 +84,19 @@ list:
 
 </div><!-- /container -->
 
+<script type="text/template" id="addFeedTemplate">
+  <label>Add Feed</label>
+  <input type="text" id="addFeed_URL" />
+  <input type="button" id="addFeed_Button" value="Add" />
+</script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/jquery.smooth-scroll.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootswatch.js"></script>
-    <script type="text/javascript" src="/js/handlebars.js"></script>
-    <script type="text/javascript" src="/js/ember-1.0.0-rc.1.js"></script>
+    <script src="/js/underscore-min.js"></script>
+    <script src="/js/backbone-min.js"></script>
+    <script src="/js/backbone.localStorage.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
 
 </body>
