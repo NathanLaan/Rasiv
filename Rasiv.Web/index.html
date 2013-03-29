@@ -35,11 +35,10 @@
        <a class="brand" href="/">RASIV</a>
        <div class="nav-collapse collapse" id="main-menu">
         <ul class="nav" id="main-menu-left">
-          <li><a href="/">Apps</a></li>
-          <li><a href="/index.html/#/add">Add Feed</a></li>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <b class="caret"></b></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
             <ul class="dropdown-menu" id="swatch-menu">
+              <li><a href="/index.html/#/add">Add Feed</a></li>
               <li><a href="#">Mark all as read</a></li>
               <li><a href="#">Mark as read</a></li>
               <li class="divider"></li>
@@ -52,14 +51,12 @@
               <li><a href="/index.html/#/feed/1">Feed #1</a></li>
               <li><a href="/index.html/#/feed/2">Feed #2</a></li>
               <li><a href="/index.html/#/feed/3">Feed #3</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Delete feed</a></li>
             </ul>
           </li>
         </ul>
         <ul class="nav pull-right" id="main-menu-right">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Help</a></li>
+          <li><a href="/index.html/#about">About</a></li>
+          <li><a href="/index.html/#help">Help</a></li>
         </ul>
        </div>
      </div>
@@ -67,11 +64,13 @@
 </div>
 
 <div class="container">
+<!--
     <div class="subnav">
     <ul class="nav nav-pills">
     <li><a href="#Submenu">Submenu</a></li>
     </ul>
     </div>
+-->
 
     <div class="row">
     <div class="span8">
@@ -90,11 +89,6 @@
 
 </div><!-- /container -->
 
-<script type="text/template" id="addFeedTemplate">
-  <label>Add Feed</label>
-  <input type="text" id="addFeed_URL" />
-  <input type="button" id="addFeed_Button" value="Add" />
-</script>
 <script type="text/template" id="viewFeedTemplate">
   <label>Feed <%= feedLabel %></label>
   <br/>
@@ -103,14 +97,16 @@
   <br/>
 </script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/js/jquery.smooth-scroll.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/bootswatch.js"></script>
-    <script src="/js/underscore-min.js"></script>
-    <script src="/js/backbone-min.js"></script>
-    <script src="/js/backbone.localStorage.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.smooth-scroll.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/bootswatch.js"></script>
+<script type="text/javascript" src="/js/underscore-min.js"></script>
+<script type="text/javascript" src="/js/underloader.js"></script>
+<script type="text/javascript" src="/js/backbone-min.js"></script>
+<script type="text/javascript" src="/js/backbone.localStorage.js"></script>
+<script type="text/javascript" src="/js/backbone.destroy-view.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
 
 </body>
 </html>

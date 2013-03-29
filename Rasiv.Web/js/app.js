@@ -1,10 +1,19 @@
 ﻿$(function () {
 
 
+    //
+    // load templates
+    //
+    underloader.loadTemplates('/jstemps/', ['addFeedTemplate.html'], function () {
+        //app = new AppRouter();
+        //Backbone.history.start();
+    });
+
+    underloader.get('addFeedTemplate.html');
 
     RasivFeedModel = Backbone.Model.extend({
         initialize: function () {
-            console.log('RasivAppModel.initialize()');
+            console.log('--RasivAppModel.initialize()--');
         },
         addFeed: function (f) {
             console.log("RasivAppModel.addFeed(): " + f);
@@ -13,7 +22,7 @@
 
     AddFeedView = Backbone.View.extend({
         initialize: function () {
-            console.log('addFeedView.initialize()');
+            console.log('--addFeedView.initialize()--');
             this.renderView();
         },
         renderView: function () {
@@ -31,6 +40,7 @@
             // event.currentTarget
             rfm.addFeed($("#addFeed_URL").val());
         }
+
     });
 
     ViewFeedView = Backbone.View.extend({
@@ -59,6 +69,13 @@
             "feed/:id": "viewRoute",
             "add": "addRoute",
             "*actions": "defaultRoute" // matches http://rasiv.com/#anything-here
+        },
+        showView: function (selector, view) {
+            if (this.currentView)
+                this.currentView.close();
+            $(selector).html(view.render().el);
+            this.currentView = view;
+            return view;
         }
     });
     // Initiate the router
