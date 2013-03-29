@@ -8,7 +8,45 @@
     underloader.loadTemplates('/jstemps/', [addFeedTemplate_name], function () {
         //app = new AppRouter();
         //Backbone.history.start();
+        var AppRouter = Backbone.Router.extend({
+            routes: {
+                "feed/:id": "viewRoute",
+                "add": "addRoute",
+                "*actions": "defaultRoute" // matches http://rasiv.com/#anything-here
+            },
+            showView: function (selector, view) {
+                if (this.currentView)
+                    this.currentView.close();
+                $(selector).html(view.render().el);
+                this.currentView = view;
+                return view;
+            }
+        });
+        // Initiate the router
+        var RasivAppRouter = new AppRouter;
+
+        RasivAppRouter.on('route:defaultRoute', function (actions) {
+            console.log('ACTIONS: ' + actions);
+        });
+
+        RasivAppRouter.on('route:viewRoute', function (id) {
+            console.log('--route:viewRoute--');
+            var v = new ViewFeedView({ el: $("#pageContent") });
+            v.initialize();
+        });
+
+        RasivAppRouter.on('route:addRoute', function () {
+            //            var v = new AddFeedView({ el: $("#pageContent") });
+            //            v.initialize();
+
+            $('#pageContent').html(new AddFeedView().renderView().el);
+        });
+
+        // Start Backbone history a necessary step for bookmarkable URL's
+        Backbone.history.start();
     });
+
+
 
     RasivFeedModel = Backbone.Model.extend({
         initialize: function () {
@@ -39,10 +77,13 @@
             /*
             var template = _.template($("#addFeedTemplate").html(), variables);
             /*/
-            var template = _.template(underloader.get(addFeedTemplate_name), variables);
+            var template = _.template(templateContent, variables);
             //*/
             // Load the compiled HTML into the Backbone "el"
             this.$el.html(template);
+
+            $(this.el).html(template);
+            return this;
         },
         events: {
             "click input[type=button]": "addFeed_EventHandler"
@@ -75,40 +116,6 @@
 
 
 
-    var AppRouter = Backbone.Router.extend({
-        routes: {
-            "feed/:id": "viewRoute",
-            "add": "addRoute",
-            "*actions": "defaultRoute" // matches http://rasiv.com/#anything-here
-        },
-        showView: function (selector, view) {
-            if (this.currentView)
-                this.currentView.close();
-            $(selector).html(view.render().el);
-            this.currentView = view;
-            return view;
-        }
-    });
-    // Initiate the router
-    var RasivAppRouter = new AppRouter;
-
-    RasivAppRouter.on('route:defaultRoute', function (actions) {
-        console.log('ACTIONS: ' + actions);
-    });
-
-    RasivAppRouter.on('route:viewRoute', function (id) {
-        console.log('--route:viewRoute--');
-        var v = new ViewFeedView({ el: $("#pageContent") });
-        v.initialize();
-    });
-
-    RasivAppRouter.on('route:addRoute', function () {
-        var v = new AddFeedView({ el: $("#pageContent") });
-        v.initialize();
-    });
-
-    // Start Backbone history a necessary step for bookmarkable URL's
-    Backbone.history.start();
 
 
 
