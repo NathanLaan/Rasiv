@@ -12,13 +12,13 @@ underloader = {
     // This implementation should be changed in a production environment. All the template files should be
     // concatenated in a single file.
     loadTemplates: function (rootPath, fileNames, callback) {
-        console.log('--underloader.loadTemplates(): ');
-        console.log(fileNames);
+        //console.log('--underloader.loadTemplates(): ');
+        //console.log(fileNames);
         var ulref = this;
 
         var loadTemplate = function (index) {
             var name = fileNames[index];
-            console.log('--underloader.loadTemplates() -- Loading template: ' + name);
+            console.log('--DEBUG--underloader.loadTemplates() -- Loading template: ' + name);
             $.get(rootPath + name, function (data) {
                 ulref.templates[name] = data;
                 index++;
@@ -35,8 +35,6 @@ underloader = {
 
     // Get template by name from hash of preloaded templates
     get: function (name) {
-        console.log('--underloader.get(): ' + name);
-        console.log(this.templates);
         return this.templates[name];
     }
 

@@ -52,8 +52,11 @@
     <Content Include="css\bootswatch.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="index.html" />
+    <Content Include="jstemplates\AddFeedTemplate.html" />
+    <Content Include="jstemplates\ViewFeedTemplate.html" />
     <Content Include="js\app.js" />
     <Content Include="js\backbone-min.js" />
+    <Content Include="js\backbone.destroy-view.js" />
     <Content Include="js\backbone.localStorage.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -62,6 +65,7 @@
     <Content Include="js\handlebars.js" />
     <Content Include="js\jquery.smooth-scroll.min.js" />
     <Content Include="js\underscore-min.js" />
+    <Content Include="js\underloader.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -75,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="jstemps\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
