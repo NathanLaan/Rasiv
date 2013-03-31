@@ -14,6 +14,7 @@
     <![endif]-->
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-navlist-collapse.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/bootswatch.css" rel="stylesheet">
@@ -64,33 +65,55 @@
 </div>
 
 <div class="container">
-<!--
-    <div class="subnav">
-    <ul class="nav nav-pills">
-    <li><a href="#Submenu">Submenu</a></li>
-    </ul>
-    </div>
--->
 
     <div class="row">
-    <div class="span8">
-
-    <div id="pageContent"></div>
-
+        <div class="span2">
+            <ul class="nav nav-list">
+            <li>
+                <a href="/#/category/01" data-target="#FeedCategory01-sub" data-toggle="collapse">Feed Category 01</a>
+                <ul class="nav nav-list collapse in" id="FeedCategory01-sub" >
+                <li class="active"><a href="/#/feed/01">Feed 01</a></li>
+                <li><a href="/#/feed/02">Feed 02</a></li>
+                <li><a href="/#/feed/03">Feed 03</a></li>
+                <li><a href="/#/feed/04">Feed 04</a></li>
+                <li><a href="/#/feed/05">Feed 05</a></li>
+                <li><a href="/#/feed/06">Feed 06</a></li>
+                <li><a href="/#/feed/07">Feed 07</a></li>
+                <li><a href="/#/feed/08">Feed 08</a></li>
+                <li><a href="/#/feed/09">Feed 09</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/#/category/02" title="" data-target="#FeedCategory02-sub" data-toggle="collapse">Feed Category 02</a>
+                <ul class="nav nav-list collapse in" id="FeedCategory02-sub" >
+                <li><a href="/#/feed/01">Feed 01</a></li>
+                <li><a href="/#/feed/02">Feed 02</a></li>
+                <li><a href="/#/feed/03">Feed 03</a></li>
+                <li><a href="/#/feed/04">Feed 04</a></li>
+                <li><a href="/#/feed/05">Feed 05</a></li>
+                <li><a href="/#/feed/06">Feed 06</a></li>
+                <li><a href="/#/feed/07">Feed 07</a></li>
+                <li><a href="/#/feed/08">Feed 08</a></li>
+                <li><a href="/#/feed/09">Feed 09</a></li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        <div class="span8">
+        <div id="pageContent"></div>
+        </div>
     </div>
+  
+    <hr>
+    <footer id="footer">
+    <p class="pull-right"><a href="#top">Back to top</a></p>
+    <div class="links">
+        <a href="http://rasiv.com">RASIV Feed Reader</a>
+        <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+        <a href="http://bootswatch.com/cosmo/">Bootswatch COSMO</a>
+        <a href="https://github.com/NathanLaan/Rasiv">GitHub</a>
     </div>
-
-      
-<hr>
-<footer id="footer">
-<p class="pull-right"><a href="#top">Back to top</a></p>
-<div class="links">
-    <a href="http://rasiv.com">RASIV Feed Reader</a>
-    <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
-    <a href="http://bootswatch.com/cosmo/">Bootswatch COSMO</a>
-    <a href="https://github.com/NathanLaan/Rasiv">GitHub</a>
-</div>
-</footer>
+    </footer>
 
 </div><!-- /container -->
 

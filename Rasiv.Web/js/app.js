@@ -2,12 +2,13 @@
 
     var addFeedTemplate_name = 'AddFeedTemplate.html';
     var viewFeedTemplate_name = 'ViewFeedTemplate.html';
+    var viewCategoryTemplate_name = 'ViewCategoryTemplate.html';
     var templatesDir = '/jstemplates/';
 
     //
     // load templates
     //
-    underloader.loadTemplates(templatesDir, [addFeedTemplate_name, viewFeedTemplate_name], function () {
+    underloader.loadTemplates(templatesDir, [addFeedTemplate_name, viewFeedTemplate_name, viewCategoryTemplate_name], function () {
 
         RasivFeedModel = Backbone.Model.extend({
             initialize: function () {
@@ -52,6 +53,19 @@
             }
         });
 
+        ViewCategoryView = Backbone.View.extend({
+            initialize: function () {
+                this.renderView();
+            },
+            renderView: function () {
+                var templateContent = underloader.get(viewCategoryTemplate_name);
+                var variables = { categoryLabel: "--CATEGORY--TITLE--" };
+                var template = _.template($("#viewCategoryTemplate", templateContent).prevObject.html(), variables);
+                this.$el.html(template);
+                return this;
+            }
+        });
+
         var rfm = new RasivFeedModel();
 
 
@@ -59,6 +73,7 @@
         var RasivAppRouter = Backbone.Router.extend({
             routes: {
                 "feed/:id": "viewRoute",
+                "category/:id": "categoryRoute",
                 "add": "addRoute",
                 "*actions": "defaultRoute" // matches http://rasiv.com/#anything-here
             },
@@ -81,6 +96,11 @@
         rar.on('route:viewRoute', function (id) {
             console.log('--route:viewRoute--');
             $('#pageContent').html(new ViewFeedView().renderView().el);
+        });
+
+        rar.on('route:categoryRoute', function (id) {
+            console.log('--route:categoryRoute--');
+            $('#pageContent').html(new ViewCategoryView().renderView().el);
         });
 
         rar.on('route:addRoute', function () {
